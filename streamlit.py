@@ -37,7 +37,7 @@ iii. parâmetro de acerto ao acaso (c) – é a probabilidade de um
 respondente com baixa proficiência responder corretamente um item.
 """)
 st.header("Como faço pra calcular esses parâmetros em uma dada questão?")
-st.write("""Isso é um desafio bem grande. Os valore dos parâmetros a, b e c são calculados através de pré-testagens
+st.write("""Isso é um desafio bem grande. Os valores dos parâmetros a, b e c são calculados através de pré-testagens
 (calibragem dos itens), utilizando o método da máxima verossimilhança. Isso não dá pra fazer na mão e precisamos
 de um programa que o faça. Em Python tem uma biblioteca chamada pyirt que em tese estima esses valores, mas a adaptação
 dela no código final não ficou tão boa e a estimativa desses parâmetros pra cada questão acabou sendo feita
@@ -53,7 +53,7 @@ code = '''library(mirt)
 mod3 <- mirt(TRIcasd, 1, itemtype='3PL')
 coef(mod3, simplify=TRUE, IRTpars=TRUE)'''
 st.code(code, language='r')
-st.write(''' Isso vai printar os valores estimados de a, b e c. Como a bilbioteca é orinalmente em inglês, há somente a
+st.write(''' Isso vai printar os valores estimados de a, b e c. Como a bilbioteca é originalmente em inglês, há somente a
 troca de c por g, o qual por ser o fator de chute tem significado _guess_. Com esses valores montamos um arquivo csv cujas 
 colunas são a, b e g de cada questão:
 ''')
